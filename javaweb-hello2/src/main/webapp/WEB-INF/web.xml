@@ -1,0 +1,15 @@
+
+<!--
+  IDEA中生成项目默认生成的版本比较老，最好是用tomcat中的配置文件
+    下方的文件 就是从 tomcat  webapps/ROOT/WEB-INF/web.xml中复制出来的 -->
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0"
+         metadata-complete="true">
+</web-app>
