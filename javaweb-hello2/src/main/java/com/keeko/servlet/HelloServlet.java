@@ -12,6 +12,7 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         // 相应的类型： html
         response.setContentType("text/html");
+        response.setCharacterEncoding("utf-8"); // 输出中文"你好" 不指定utf-8会乱码
 
         // 获取相应的输出流
         PrintWriter out = response.getWriter();
@@ -22,6 +23,7 @@ public class HelloServlet extends HttpServlet {
         out.println("</head>");
         out.println("<body>");
         out.println("<h1>cus!</h1>");
+        out.println("<h2>你好</h2>");
         out.println("</body>");
         out.println("</html>");
 
