@@ -14,4 +14,24 @@
         <servlet-name>hello</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+
+    <!-- 可以自定义后缀实现请求映射
+         注意点，*前面不能加项目映射的路径
+         hello/hi.keeko
+        -->
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>*.keeko</url-pattern>
+    </servlet-mapping>
+
+    <!-- 404这个通配符/* 的优先级 比 *.keeko高 -->
+    <!--  404  -->
+    <servlet>
+        <servlet-name>error</servlet-name>
+        <servlet-class>com.keeko.servlet.ErrorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>error</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
 </web-app>
