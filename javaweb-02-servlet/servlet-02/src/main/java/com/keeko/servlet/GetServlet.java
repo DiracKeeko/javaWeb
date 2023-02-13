@@ -7,18 +7,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class HelloServlet extends HttpServlet {
+public class GetServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // this.getInitParameter(); 初始化参数
-        // this.getServletConfig(); Servlet配置
-        // this.getServletContext(); Servlet上下文
         ServletContext context = this.getServletContext();
+        String username = (String) context.getAttribute("userName");
 
-        String userName = "法外狂徒张三";   // 数据
-        // 将一个数据保存在了ServletContext中，名字为：name ,值 name
-        context.setAttribute("userName", userName);
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("utf-8");
+        resp.getWriter().print("用户名: " + username);
+    }
 
-        System.out.println("Hello");
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp);
     }
 }
