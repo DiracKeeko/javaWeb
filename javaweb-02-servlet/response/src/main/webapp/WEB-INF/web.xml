@@ -14,4 +14,13 @@
         <servlet-name>/fileDown</servlet-name>
         <url-pattern>/down</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>/imgs</servlet-name>
+        <servlet-class>com.keeko.servlet.ImageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>/imgs</servlet-name>
+        <url-pattern>/img</url-pattern>
+    </servlet-mapping>
 </web-app>
