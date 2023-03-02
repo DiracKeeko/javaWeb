@@ -47,7 +47,7 @@ public class CookieDemo01 extends HttpServlet {
         // 服务端给客户端响应一个Cookie;
         Cookie cookie = new Cookie("lastLoginTime", System.currentTimeMillis() + "");
 
-        // 设置cookie的有效期
+        // 设置cookie的有效期 ↓一天 24h * 60min * 60s
         cookie.setMaxAge(24 * 60 * 60);
 
         resp.addCookie(cookie);
