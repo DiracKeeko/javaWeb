@@ -40,4 +40,13 @@
         <url-pattern>/s1</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SessionDemo02</servlet-name>
+        <servlet-class>com.keeko.servlet.SessionDemo02</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionDemo02</servlet-name>
+        <url-pattern>/s2</url-pattern>
+    </servlet-mapping>
+
 </web-app>
