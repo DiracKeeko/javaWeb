@@ -57,4 +57,10 @@
         <servlet-name>SessionDemo03</servlet-name>
         <url-pattern>/s3</url-pattern>
     </servlet-mapping>
+
+    <!-- 设置session的自动失效时间 -->
+    <session-config>
+        <!-- 15分钟后session自动失效  以分钟为单位 -->
+        <session-timeout>15</session-timeout>
+    </session-config>
 </web-app>
