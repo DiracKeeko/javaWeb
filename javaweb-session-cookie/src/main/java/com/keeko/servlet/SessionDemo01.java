@@ -18,7 +18,8 @@ public class SessionDemo01 extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
 
         // 得到Session
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(); // getSession() 如果req里有session会获取session。 没有session会创建session。
+
         // 在session中存东西
         session.setAttribute("name", new Person("小明", 16));
         // 获取Session中的ID
