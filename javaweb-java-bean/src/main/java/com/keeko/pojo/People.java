@@ -1,6 +1,10 @@
 package com.keeko.pojo;
 
+// 实体类 一般和数据库中的表结构一一对应
 public class People {
+
+    // 把数据库中的last_id 自动转化为lastId
+
     private int id;
     private String name;
     private int age;
