@@ -12,6 +12,14 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/servlet/login</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.keeko.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/servlet/logout</url-pattern>
+    </servlet-mapping>
     
     <servlet>
         <servlet-name>ShowSevlet</servlet-name>
