@@ -45,6 +45,15 @@
 <!--        <url-pattern>/*</url-pattern>-->
     </filter-mapping>
 
+    <filter>
+        <filter-name>SysFilter</filter-name>
+        <filter-class>com.keeko.filter.SysFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SysFilter</filter-name>
+        <url-pattern>/sys/*</url-pattern>
+    </filter-mapping>
+
     <!--注册监听器-->
     <listener>
         <listener-class>com.keeko.listener.OnlineCountListener</listener-class>
