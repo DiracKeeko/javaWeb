@@ -23,6 +23,10 @@ public class TestJdbc {
         // 4.编写SQL
         String sql = "select * from users";
 
+        // String sql = "delete from users where id = 4";
+        // 受影响的行数, 增删改都用executeUpdate
+        // int i = statement.executeUpdate(sql);
+
         // 5.执行查询SQL，返回一个 ResultSet  ： 结果集
         ResultSet rs = statement.executeQuery(sql);
 
