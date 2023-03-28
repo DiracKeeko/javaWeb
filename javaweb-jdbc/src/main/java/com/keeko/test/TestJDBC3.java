@@ -11,7 +11,7 @@ public class TestJDBC3 {
     public void test() {
         // 配置信息
         // useUnicode=true&characterEncoding=utf-8 解决中文乱码
-        String url="jdbc:mysql://localhost:3306/jdbc?useUnicode=true&characterEncoding=utf-8";
+        String url = "jdbc:mysql://localhost:3306/jdbc?useUnicode=true&characterEncoding=utf-8";
         String username = "root";
         String password = "root";
 
@@ -23,8 +23,17 @@ public class TestJDBC3 {
             // 2.连接数据库,代表数据库
             connection = DriverManager.getConnection(url, username, password);
 
-            // 3.通知数据库开启事务,false 开启
+            // 3.通知数据库开启事务, false 开启
             connection.setAutoCommit(false);
+            /**
+             * 连续的进行插入操作，如果在开始时设置了：connection.setAutoCommit(false);
+             * 最后才进行connection.commit()
+             * 这样即使插入的时候报错，修改的内容也不会提交到数据库。
+             *
+             * 而如果没有手动的进行setAutoCommit(false);
+             * 出错时就会造成，前几条插入，后几条没有
+             * 会形成脏数据
+             */
 
             String sql = "update account set money = money-100 where name = 'A'";
             connection.prepareStatement(sql).executeUpdate();
@@ -46,7 +55,7 @@ public class TestJDBC3 {
                 e1.printStackTrace();
             }
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 connection.close();
             } catch (SQLException e) {
